@@ -1,10 +1,7 @@
 import { HomePage } from '@pages/homePage';
-import { getTodosApi } from '@utils/api/todosApi';
 import { fetchTodos } from '@utils/slices/todoSlice';
 import { fetchUsers } from '@utils/slices/usersSlice';
-
 import { useAppDispatch, useAppSelector } from '@utils/store';
-
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -30,5 +27,3 @@ export const App: React.FC = () => {
     </Router>
   );
 };
-
-export default App;

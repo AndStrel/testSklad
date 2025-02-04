@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getTodosApi } from '@utils/api/todosApi';
 import { TTodo } from 'types/todo';
 
@@ -8,7 +8,7 @@ interface todoState {
   error: string | null;
 }
 
-const initialState: todoState = {
+export const initialState: todoState = {
   isLoading: false,
   todos: [],
   error: null,

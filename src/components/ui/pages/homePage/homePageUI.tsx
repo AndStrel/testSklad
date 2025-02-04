@@ -1,4 +1,4 @@
-import { TableItem } from '@components/tableItem/tableItem';
+import { TableItem } from '@components/tableItem';
 import style from './homePageUI.module.scss';
 import { TUserTable } from 'types/user';
 
