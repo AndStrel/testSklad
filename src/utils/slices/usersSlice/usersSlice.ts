@@ -19,7 +19,7 @@ const initialState: usersState = {
 const selectUsers = (state: RootState) => state.users.users;
 const selectTodos = (state: RootState) => state.todo.todos;
 
-export const selectUsersWithTodoCount = createSelector(
+export const selectSortedUsers = createSelector(
   [selectUsers, selectTodos],
   (users: TUser[], todos: TTodo[]) => {
     return users.map((user: TUser) => ({

@@ -19,8 +19,8 @@ export const App: React.FC = () => {
     dispatch(fetchTodos());
   }, [dispatch]);
 
-  // if (isLoading || usersLoading) return <h1>Загрузка...</h1>;
-  // if (error || usersError) return <h1>Ошибка: {error || usersError}</h1>;
+  if (isLoading || usersLoading) return <h1>Загрузка...</h1>;
+  if (error || usersError) return <h1>Ошибка: {error || usersError}</h1>;
 
   return (
     <Router>

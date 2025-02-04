@@ -21,3 +21,10 @@ export type TUser = {
     bs: string;
   };
 };
+
+export type TUserTable = {
+  id: number;
+  name: string;
+  email: string;
+  count: number;
+};

@@ -1,8 +1,9 @@
 import { HomePageUI } from '@ui/pages';
-import { selectUsersWithTodoCount } from '@utils/slices/usersSlice';
+import { selectSortedUsers } from '@utils/slices/usersSlice';
 import { useAppSelector } from '@utils/store';
+import { TUserTable } from 'types/user';
 export const HomePage: React.FC = () => {
-  const usersWithTodoCount = useAppSelector(selectUsersWithTodoCount);
+  const usersWithTodoCount: TUserTable[] = useAppSelector(selectSortedUsers);
 
   return <HomePageUI usersWithTodoCount={usersWithTodoCount} />;
 };

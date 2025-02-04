@@ -1,13 +1,9 @@
 import { TableItem } from '@components/tableItem/tableItem';
 import style from './homePageUI.module.scss';
+import { TUserTable } from 'types/user';
 
 interface HomePageUIProps {
-  usersWithTodoCount: {
-    id: number;
-    name: string;
-    email: string;
-    count: number;
-  }[];
+  usersWithTodoCount: TUserTable[];
 }
 
 export const HomePageUI: React.FC<HomePageUIProps> = ({
@@ -31,16 +27,9 @@ export const HomePageUI: React.FC<HomePageUIProps> = ({
             </tr>
           </thead>
           <tbody className={style.tbody}>
-            <TableItem />
-            {/* {usersWithTodoCount.map((user) => (
-              <TableItem
-                key={user.id}
-                id={user.id}
-                name={user.name}
-                email={user.email}
-                count={user.count}
-              />
-            ))} */}
+            {usersWithTodoCount.map((user) => (
+              <TableItem key={user.id} user={user} />
+            ))}
           </tbody>
         </table>
       </div>
