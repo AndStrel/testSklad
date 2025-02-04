@@ -1,0 +1,190 @@
+@use '/src/styles/utils/variables.scss' as *;
+@use '/src/styles/utils/mixins.scss' as *;
+
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+
+  .containerTitle {
+    @include flex-columnStart;
+
+    .title {
+      font-family: $font-title;
+      font-size: 48px;
+      font-weight: bold;
+      color: $primary-color;
+      transition: all 0.3s ease-in-out;
+
+    }
+
+    .description {
+      font-family: $font-stack;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 24px;
+      color: $primary-color;
+      opacity: 0.3;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .containerTable {
+    width: 100%;
+    border-radius: 8px;
+    padding-block-start: 48px;
+
+
+    .table {
+      border: 1px solid $border-color;
+      text-align: left;
+      border-collapse: collapse;
+      width: 100%;
+
+
+
+      .th,
+      .td {
+        padding-inline: 12px;
+      }
+
+      .thead {
+        $primary-color: rgb(255, 255, 255, 0.04);
+        background-color: $primary-color;
+        $primary-color: rgba(255, 255, 255, 0.3);
+        color: $primary-color;
+
+
+        & .th {
+          font-family: $font-stack;
+          font-size: 12px;
+          font-weight: 600;
+          text-transform: uppercase;
+          padding-inline: 12px;
+          padding-block: 8.5px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        & .tr {
+          border-bottom: 1px solid $border-color;
+
+        }
+
+      }
+
+      .tbody {
+        color: $primary-color;
+        font-family: $font-stack;
+        font-weight: 500;
+
+        .item {
+          border-bottom: 1px solid $border-color;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          padding-block: 20px;
+
+          &__avatar {
+            margin-right: 16px;
+
+            img {
+              width: 40px;
+              height: 40px;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+
+          &__info {
+            display: flex;
+            flex-direction: column;
+
+            &__name {
+              margin-bottom: 4px;
+              transition: all 0.3s ease-in-out;
+            }
+
+            &__email {
+              font-size: 12px;
+              $primary-color: rgba(255, 255, 255, 0.4);
+              color: $primary-color;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+        }
+
+      }
+
+
+
+    }
+  }
+}
+
+
+
+
+@media screen and (max-width: 834px) {
+  .main {
+    .containerTable {
+      padding-block-start: 24px;
+    }
+
+    .containerTitle {
+      .title {
+        font-size: 24px;
+      }
+
+      .description {
+        font-size: 12px;
+        line-height: 20px;
+      }
+    }
+
+    .containerTable {
+      .table {
+        font-size: 12px;
+
+        .thead {
+          .th {
+            font-size: 8px;
+            padding-block: 11px;
+          }
+        }
+
+        .tbody {
+          .user {
+            padding-block: 14px;
+
+            &__avatar {
+              img {
+                width: 24px;
+                height: 24px;
+              }
+
+              margin-right: 10px;
+            }
+
+            &__info {
+              &__name {
+                font-size: 12px;
+              }
+
+              &__email {
+                font-size: 10px;
+              }
+            }
+          }
+
+          .countContainer {
+            padding-inline: 40px;
+          }
+        }
+      }
+    }
+
+  }
+}

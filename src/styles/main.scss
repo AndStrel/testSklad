@@ -1,2 +1,21 @@
-@use './base/reset.scss';
-@use './base/typography.scss';
+@use './base/reset.scss' as *;
+@use './base/typography.scss' as *;
+@use './utils/variables.scss' as *;
+@use './utils/mixins.scss' as *;
+
+html {
+  background-color: $bg-color;
+  scroll-behavior: smooth;
+  }
+
+body {
+  margin: 80px 80px 66px;
+}
+
+@media screen and (max-width: 834px) {
+  body {
+    margin: 56px 40px 145px;
+  }
+
+}
+
