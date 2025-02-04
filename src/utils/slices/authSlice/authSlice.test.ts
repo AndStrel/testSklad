@@ -13,7 +13,7 @@ describe('authSlice', () => {
   });
 
   it('should handle login action', () => {
-    const user: TUser = { name: 'Sebastian', email: 'sebastian@mail.ru' };
+    const user = { name: 'Sebastian', email: 'sebastian@mail.ru' };
     const action = login(user);
 
     const state = authReducer(initialState, action);

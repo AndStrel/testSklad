@@ -43,7 +43,6 @@
         min-width: 23px;
         padding-inline: 12px;
         text-align: center;
-
       }
 
       .userContainer {
@@ -62,7 +61,6 @@
         $primary-color: rgba(255, 255, 255, 0.3);
         color: $primary-color;
 
-
         & .tr {
           font-family: $font-stack;
           font-size: 12px;
@@ -79,10 +77,6 @@
         color: $primary-color;
         font-family: $font-stack;
         font-weight: 500;
-
-
-
-
       }
     }
   }
@@ -90,7 +84,6 @@
 
 @media screen and (max-width: 834px) {
   .main {
-
     .containerTitle {
       .title {
         font-size: 24px;
@@ -110,7 +103,6 @@
 
         .numberContainer {
           min-width: 13px;
-
         }
 
         .countContainer {
