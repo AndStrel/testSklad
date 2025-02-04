@@ -1,7 +1,18 @@
+import { TableItem } from '@components/tableItem/tableItem';
 import style from './homePageUI.module.scss';
-import avatar from '@assets/avatar.svg';
 
-export const HomePageUI: React.FC = ({}) => {
+interface HomePageUIProps {
+  usersWithTodoCount: {
+    id: number;
+    name: string;
+    email: string;
+    count: number;
+  }[];
+}
+
+export const HomePageUI: React.FC<HomePageUIProps> = ({
+  usersWithTodoCount,
+}) => {
   return (
     <main className={style.main}>
       <div className={style.containerTitle}>
@@ -14,29 +25,22 @@ export const HomePageUI: React.FC = ({}) => {
         <table className={style.table}>
           <thead className={style.thead}>
             <tr className={style.tr}>
-              <th className={style.th}>#</th>
-              <th className={style.th}>Username</th>
-              <th className={style.th}>to-do count</th>
+              <th className={(style.th, style.numberContainer)}>#</th>
+              <th className={(style.th, style.userContainer)}>Username</th>
+              <th className={(style.th, style.countContainer)}>to-do count</th>
             </tr>
           </thead>
           <tbody className={style.tbody}>
-            {/* <tr className={style.item}>
-              <td className={style.td}>1</td>
-              <td className={style.td}>
-                <div className={style.user}>
-                  <div className={style.user__avatar}>
-                    <img src={avatar} alt="avatar" />
-                  </div>
-                  <div className={style.user__info}>
-                    <p className={style.user__info__name}>Ethan Mitchell</p>
-                    <p className={style.user__info__email}>
-                      ethan.mitchell24@email.com
-                    </p>
-                  </div>
-                </div>
-              </td>
-              <td className={(style.td, style.countContainer)}>1</td>
-            </tr> */}
+            <TableItem />
+            {/* {usersWithTodoCount.map((user) => (
+              <TableItem
+                key={user.id}
+                id={user.id}
+                name={user.name}
+                email={user.email}
+                count={user.count}
+              />
+            ))} */}
           </tbody>
         </table>
       </div>

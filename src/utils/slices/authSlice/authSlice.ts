@@ -3,7 +3,7 @@ import { TUser } from 'types/user';
 
 interface AuthState {
   isAuthenticated: boolean;
-  user: TUser | null;
+  user: Partial<TUser> | null;
 }
 
 const initialState: AuthState = {

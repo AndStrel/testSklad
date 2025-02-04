@@ -39,8 +39,20 @@
       border-collapse: collapse;
       width: 100%;
 
-      .th,
-      .td {
+      .numberContainer {
+        min-width: 23px;
+        padding-inline: 12px;
+        text-align: center;
+
+      }
+
+      .userContainer {
+        width: 100%;
+        padding-inline: 12px;
+      }
+
+      .countContainer {
+        min-width: 146px;
         padding-inline: 12px;
       }
 
@@ -50,7 +62,8 @@
         $primary-color: rgba(255, 255, 255, 0.3);
         color: $primary-color;
 
-        & .th {
+
+        & .tr {
           font-family: $font-stack;
           font-size: 12px;
           font-weight: 600;
@@ -58,9 +71,6 @@
           padding-inline: 12px;
           padding-block: 8.5px;
           transition: all 0.3s ease-in-out;
-        }
-
-        & .tr {
           border-bottom: 1px solid $border-color;
         }
       }
@@ -70,42 +80,9 @@
         font-family: $font-stack;
         font-weight: 500;
 
-        .item {
-          border-bottom: 1px solid $border-color;
-        }
 
-        .user {
-          display: flex;
-          align-items: center;
-          padding-block: 20px;
 
-          &__avatar {
-            margin-right: 16px;
 
-            img {
-              width: 40px;
-              height: 40px;
-              transition: all 0.3s ease-in-out;
-            }
-          }
-
-          &__info {
-            display: flex;
-            flex-direction: column;
-
-            &__name {
-              margin-bottom: 4px;
-              transition: all 0.3s ease-in-out;
-            }
-
-            &__email {
-              font-size: 12px;
-              $primary-color: rgba(255, 255, 255, 0.4);
-              color: $primary-color;
-              transition: all 0.3s ease-in-out;
-            }
-          }
-        }
       }
     }
   }
@@ -113,9 +90,6 @@
 
 @media screen and (max-width: 834px) {
   .main {
-    .containerTable {
-      padding-block-start: 24px;
-    }
 
     .containerTitle {
       .title {
@@ -129,42 +103,24 @@
     }
 
     .containerTable {
+      padding-block-start: 24px;
+
       .table {
         font-size: 12px;
 
-        .thead {
-          .th {
-            font-size: 8px;
-            padding-block: 11px;
-          }
+        .numberContainer {
+          min-width: 13px;
+
         }
 
-        .tbody {
-          .user {
-            padding-block: 14px;
+        .countContainer {
+          min-width: 62px;
+        }
 
-            &__avatar {
-              img {
-                width: 24px;
-                height: 24px;
-              }
-
-              margin-right: 10px;
-            }
-
-            &__info {
-              &__name {
-                font-size: 12px;
-              }
-
-              &__email {
-                font-size: 10px;
-              }
-            }
-          }
-
-          .countContainer {
-            padding-inline: 40px;
+        .thead {
+          .tr {
+            font-size: 8px;
+            padding-block: 11px;
           }
         }
       }
